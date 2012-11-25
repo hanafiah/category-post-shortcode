@@ -22,6 +22,7 @@ Version: 2.3
  * thumbnail_height - image size for the thumbnail. default is 130
  * thumbnail_width - image size for the thumbnail. default is 130
  * excerpt    - set true if you want to display excertp. default is true
+ * date       - set true if you want to display post date. default is false
  * orderby    - your post will order by . default post_date . check http://codex.wordpress.org/Template_Tags/get_posts for detail
  * order      - asc | desc
  *
@@ -56,6 +57,10 @@ Version: 2.3
     display: block;
     width:100%;
 }
+.cat-post-date
+    display: block;
+    width:100%;
+}
 .cat-clear{
     clear:both;
 }
@@ -70,6 +75,7 @@ function cat_func($atts) {
             'thumbnail'     => 'false',
             'thumbnail_height' => '130',
             'thumbnail_width' => '130',
+            'date'          => 'false',
             'excerpt'       => 'true',
             'orderby'       => 'post_date',
             'order'         => 'desc'
@@ -96,6 +102,9 @@ $tmp_post = $post;
             $output .= '<div class="cat-post-images"><img height="'.$thumbnail_height.'" width="'.$thumbnail_width.'" src="'.$thumb_image.'" /></div>';
         }
         $output .= '<div class="cat-content"><span class="cat-post-title"><a href="'.get_permalink().'">'.get_the_title().'</a></span>';
+        if ($date == 'true') {
+            $output .= '<span class="cat-post-date">'.get_the_date().'</span>';
+        }
         if ($excerpt == 'true') {
             $output .= '<span class="cat-post-excerpt">'.get_the_excerpt().'</span>';
         }
