@@ -34,6 +34,7 @@ just put this shortcode in your post or pages
 * totalposts - your total number of post to display. default is -1
 * category   - category id. use comma , for multiple id
 * thumbnail  - set true if you want to display thumbnail. default is false
+* date       - set true if you want to display post date. default is false. Uses format set in WordPress Settings > General > Date Format
 * excerpt    - set true if you want to display excertp. default is true
 * orderby    - your post will order by . default post_date . check http://codex.wordpress.org/Template_Tags/get_posts for detail
 
@@ -63,6 +64,10 @@ just put this shortcode in your post or pages
     float:right;
 }
 .cat-post-title{
+    display: block;
+    width:100%;
+}
+.cat-post-date{
     display: block;
     width:100%;
 }
