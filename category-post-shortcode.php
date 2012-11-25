@@ -5,10 +5,11 @@ Plugin URI: http://ibnuyahya.com/wordpress-plugins/category-post-shortcode/
 Description: To display post by category in your page/post
 Author: ibnuyahya
 Author URI: http://ibnuyahya.com/
-Version: 2.3
+Version: 2.4
 
 Contributors
 Ben McFadden - https://github.com/mcfadden
+
 */
 
 /*
@@ -29,7 +30,7 @@ Ben McFadden - https://github.com/mcfadden
  * orderby    - your post will order by . default post_date . check http://codex.wordpress.org/Template_Tags/get_posts for detail
  * order      - asc | desc
  *
- * thumbnail 
+ * thumbnail
  * =============================================================================
  * create custom field key as thumbnail-url and put your thumbnail url in the value area
  *
@@ -67,7 +68,7 @@ Ben McFadden - https://github.com/mcfadden
 .cat-clear{
     clear:both;
 }
- 
+
  */
 
 function cat_func($atts) {
@@ -83,7 +84,7 @@ function cat_func($atts) {
             'orderby'       => 'post_date',
             'order'         => 'desc'
             ), $atts));
-    
+
     $output = '<div class="'.$class_name.'">';
     global $post;
 $tmp_post = $post;
@@ -101,7 +102,7 @@ $tmp_post = $post;
             if(empty($thumb_image)){
                  $thumb_image ='';
             }
-          
+
             $output .= '<div class="cat-post-images"><img height="'.$thumbnail_height.'" width="'.$thumbnail_width.'" src="'.$thumb_image.'" /></div>';
         }
         $output .= '<div class="cat-content"><span class="cat-post-title"><a href="'.get_permalink().'">'.get_the_title().'</a></span>';

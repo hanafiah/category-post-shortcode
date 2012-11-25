@@ -1,11 +1,11 @@
 ==== Category Post Shortcode ====
 
 Contributors: ibnuyahya
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YGX5MRD2EGQGY
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R9WS2KA3ZJLCS
 Tags: text, php, plugin, shortcode, post list
 Requires at least: 2.8
 Tested up to: 3.3
-Stable tag: 2.3
+Stable tag: 2.4
 
 This plugin is to display post by category in your page/post
 
@@ -38,7 +38,7 @@ just put this shortcode in your post or pages
 * excerpt    - set true if you want to display excertp. default is true
 * orderby    - your post will order by . default post_date . check http://codex.wordpress.org/Template_Tags/get_posts for detail
 
-**thumbnail** 
+**thumbnail**
 * create custom field key as thumbnail-url and put your thumbnail url in the value area
 
 **style at your own**
@@ -74,7 +74,7 @@ just put this shortcode in your post or pages
 .cat-clear{
     clear:both;
 }
- 
+
 
 4.	more info or sample, please visit http://ibnuyahya.com/wordpress-plugins/category-post-shortcode
 
@@ -95,5 +95,8 @@ just put this shortcode in your post or pages
 = 2.3 =
 * add thumbnail size
 * get image from post as a thumbnail if no thumbnail-url custom field created.
+
+= 2.4 =
+* add option to display the post date
 
 
