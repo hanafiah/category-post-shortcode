@@ -6,6 +6,9 @@ Description: To display post by category in your page/post
 Author: ibnuyahya
 Author URI: http://ibnuyahya.com/
 Version: 2.3
+
+Contributors
+Ben McFadden - https://github.com/mcfadden
 */
 
 /*
