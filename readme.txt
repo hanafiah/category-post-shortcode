@@ -33,13 +33,17 @@ just put this shortcode in your post or pages
 
 * totalposts - your total number of post to display. default is -1
 * category   - category id. use comma , for multiple id
+* thumbnail_type - set to 'meta' to use custom thumbnail-url meta field, set to 'featured_image' to use the featured image. default is 'meta'
 * thumbnail  - set true if you want to display thumbnail. default is false
+* thumbnail_height - image size for the thumbnail. default is 130
+* thumbnail_width - image size for the thumbnail. default is 130
 * date       - set true if you want to display post date. default is false. Uses format set in WordPress Settings > General > Date Format
 * excerpt    - set true if you want to display excertp. default is true
 * orderby    - your post will order by . default post_date . check http://codex.wordpress.org/Template_Tags/get_posts for detail
+* order      - asc | desc
 
 **thumbnail**
-* create custom field key as thumbnail-url and put your thumbnail url in the value area
+* create custom field key as thumbnail-url and put your thumbnail url in the value area or set thumbnail_type to 'featured_image' and set a featured image
 
 **style at your own**
 * you need to style your category-post-shortcode plugin in your style.css example

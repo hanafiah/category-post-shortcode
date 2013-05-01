@@ -23,6 +23,7 @@ Ben McFadden - https://github.com/mcfadden
  * totalposts - your total number of post to display. default is -1
  * category   - category id. use comma , for multiple id
  * thumbnail  - set true if you want to display thumbnail. default is false
+ * thumbnail_type - set to 'meta' to use custom thumbnail-url meta field, set to 'featured_image' to use the featured image. default is 'meta'
  * thumbnail_height - image size for the thumbnail. default is 130
  * thumbnail_width - image size for the thumbnail. default is 130
  * excerpt    - set true if you want to display excertp. default is true
@@ -32,7 +33,7 @@ Ben McFadden - https://github.com/mcfadden
  *
  * thumbnail
  * =============================================================================
- * create custom field key as thumbnail-url and put your thumbnail url in the value area
+ * create custom field key as thumbnail-url and put your thumbnail url in the value area or set thumbnail_type to 'featured_image' and set a featured image
  *
  * style at your own
  * =============================================================================
@@ -77,6 +78,7 @@ function cat_func($atts) {
             'totalposts'    => '-1',
             'category'      => '',
             'thumbnail'     => 'false',
+            'thumbnail_type' => 'meta',
             'thumbnail_height' => '130',
             'thumbnail_width' => '130',
             'date'          => 'false',
@@ -94,7 +96,13 @@ $tmp_post = $post;
         setup_postdata($post);
         $output .= '<div class="cat-post-list">';
         if($thumbnail == 'true') {
-            $thumb_image = get_post_meta($post->ID, 'thumbnail-url',true);
+            if ("featured_image" == $thumbnail_type){
+                $thumb_image = get_the_post_thumbnail($post->ID);
+                preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $thumb_image, $matches);
+                $thumb_image = $matches [1] [0];
+            }else{
+                $thumb_image = get_post_meta($post->ID, 'thumbnail-url',true);
+            }
             if(empty($thumb_image)){
                  preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
                  $thumb_image = $matches [1] [0];
